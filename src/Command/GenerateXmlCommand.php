@@ -149,8 +149,7 @@ class GenerateXmlCommand extends Command {
    */
   protected function generateContent() {
     // Now write the body content.
-    $file = fopen($this->finalFileName, 'ab');
-    fwrite($file, "\n");
+    $file = fopen($this->finalFileName, 'wb');
     fwrite($file, $this->finalContent);
     fclose($file);
   }
