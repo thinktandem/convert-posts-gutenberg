@@ -123,7 +123,6 @@ class GenerateXmlCommand extends Command {
       $content = $this->addGutenbergTags($node->nodeValue);
       $node->nodeValue = '';
       $node->appendChild($document->createCDATASection($content));
-      $document->createCDATASection($content);
     }
     $this->finalContent = $document->saveXML();
   }
