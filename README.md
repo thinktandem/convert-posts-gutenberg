@@ -15,9 +15,9 @@ bin/console generate:xml FILE_PATH
 
 1. Download [WordPress All Export Plugin](https://www.wpallimport.com/export/)
 2. Export your posts as a XML, but do the following:
-  a. In the content field select "Export the value returned by a PHP function"
-  b. Put transform in the first vox that has <?php ___ ($value) ?>
-  c. Use this function in the function box:
+  - In the content field select "Export the value returned by a PHP function"
+  - Put transform in the first vox that has <?php ___ ($value) ?>
+  - Use this function in the function box:
   
   ```php
   <?php 
@@ -27,15 +27,12 @@ bin/console generate:xml FILE_PATH
   ?>
   ```
   
-  d. Save the function.
+  - Save the function.
   
-
 ### Requirements
 
 The file path is required. It will error out without it.
 
-
-
 ### Output
 
-Currently all files are generated to the output folder.  You can just copy the contents of that into your VuePress setup.
+The final XML is generated within the output folder in this app.
