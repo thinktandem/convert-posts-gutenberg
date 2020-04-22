@@ -134,9 +134,10 @@ class GenerateXmlCommand extends Command {
     foreach ($tags as $tag) {
       if (strpos($content, $tag) !== FALSE) {
         $end = str_replace("<", "</", $tag);
-        $wrapper = "<!– wp:paragraph –>";
-        $content = str_replace($tag, $wrapper . $tag, $content);
-        $content = str_replace($end, $end . $wrapper, $content);
+        $open_wrapper = $tag === "<p>" ? "<!– wp:paragraph –>" : "<!– wp:heading –>";
+        $closing_wrapper = $tag === "<p>" ? "<!– /wp:paragraph –>" : "<!– /wp:heading –>";
+        $content = str_replace($tag, $open_wrapper . $tag, $content);
+        $content = str_replace($end, $end . $closing_wrapper, $content);
       }
     }
     return $content;
